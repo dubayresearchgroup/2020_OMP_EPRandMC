@@ -1,13 +1,14 @@
 import random
 import math
 import numpy as np
-from CreateSysAllTag_newRot import CreateParticle
+from CreateSys import CreateParticle
 import time
 from WriteData import LAMMPS_Initial, analysis_Initial, LAMMPS_step, analysis_step
 
 #! Note : here we utilize tag and interface interchangeably. In this MC code, both 
 #! refer to the beta carbons detailed in the publication. Additionally, the interfaces are 
-#! labeled numbers 2 and 3. 
+#! labeled numbers 2 and 3. This assists with type identification in the .lammpstrj file. type 1 corresponds to the hard sphere center, 
+#! tag 2 corresponds to beta carbon 2, and tag 3 corresponds to beta carbon 1 
 
 ## Calculate the LJ MC for a simulation with either attractive tag 2 and 3.  Both contribute to the E.
 ## This accounts for the periodic boundary condition 
