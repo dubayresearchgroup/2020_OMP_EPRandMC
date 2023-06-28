@@ -9,7 +9,8 @@ from WriteData import LAMMPS_Initial, analysis_Initial, LAMMPS_step, analysis_st
 #! refer to the beta carbons detailed in the publication. Additionally, the interfaces are 
 #! labeled numbers 2 and 3. 
 
-## Calculate the LJ MC for a simulation with either attractive tag 2 and 3.  Both contribute to the E, but do not interact.
+## Calculate the LJ MC for a simulation with either attractive tag 2 and 3.  Both contribute to the E.
+## This accounts for the periodic boundary condition 
 def Distance(v1,v2, boxL):
     dist = abs(v1-v2)
     if dist > (0.5 * boxL):
@@ -17,7 +18,7 @@ def Distance(v1,v2, boxL):
 
     return dist
 
-def CalcLJ(sigma, r): #sigma is cut off distance
+def CalcLJ(sigma, r): #sigma is diameter of the interface 
     atomLJ = ((sigma/r)**12) - ((sigma/r)**6)   
         
     return atomLJ
