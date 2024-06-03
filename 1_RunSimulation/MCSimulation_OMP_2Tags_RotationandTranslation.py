@@ -316,8 +316,8 @@ start = time.time()
 boxL = 30 #edge of box in units of sigma 
 numAtom = [324]
 diameter_HS = 1  #diameter of the hardsphere particle
-diameter_int1 = 0.25  #diameter of interface 1
-diameter_int2 = 0.25 #diameter of interface 2 
+diameter_int1 = 0.2  #diameter of interface 1
+diameter_int2 = 0.2 #diameter of interface 2 
 
 ## Attraction strength of interface interactions 
 ## These are epsilon values of the LJ potential 
