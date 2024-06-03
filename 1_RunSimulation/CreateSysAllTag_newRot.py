@@ -9,7 +9,7 @@ def Distance(v1,v2, boxlength):
 
     return dist
 
-def CalcLJ(sigma, r): #sigma is cut off distance
+def CalcLJ(sigma, r): #sigma is diameter of interface
     atomLJ = ((sigma/r)**12) - ((sigma/r)**6)   
         
     return atomLJ
@@ -74,7 +74,7 @@ def CreateParticle(boxlength, no_of_atom, diameter, diameterTag2, diameterTag3, 
             
             rij = (xdist*xdist + ydist*ydist) **0.5
             if rij  < diameter:
-                print('distance between hard spheres is less than sigma')
+                print('distance between hard spheres is less than diameter_HS')
             
             xdist = Distance(tag2pos[start][0],tag2pos[second][0], boxlength)
             ydist = Distance(tag2pos[start][1],tag2pos[second][1],boxlength)
